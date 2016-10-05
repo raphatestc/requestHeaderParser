@@ -1,12 +1,11 @@
 'use strict';
 
 var express = require('express');
-var bodyParser = require('body-parser');
 var useragent = require('express-useragent');
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8080;
 var app = express();
 
-app.use(bodyParser.json());
+
 app.use(useragent.express());
 
 app.get('/', function(req, res) {
@@ -21,5 +20,5 @@ app.get('/', function(req, res) {
 
 
 app.listen(port, function() {
-    console.log('Server is up on port ' + port);
+  console.log("Server up listening to: " + port);
 });
